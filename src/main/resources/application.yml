@@ -1,0 +1,58 @@
+
+spring:
+  application:
+    name: prometheus-demo
+
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#actuator-properties
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: ['health', 'prometheus']
+#  metrics:
+#    export:
+#      prometheus:
+#        enabled: true
+#        descriptions: false
+#        step: 60s
+#    enable:
+#      all: true
+##      http: true
+##      social: true
+#    distribution:
+#      percentiles-histogram:
+#        all: true
+#      percentiles:
+#        all: 0, 0.5, 0.95, 0.99, 1
+#    tags:
+#      application: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['health', 'prometheus']
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: 5s
+        pushgateway:
+          enabled: true
+    enable:
+      all: false
+      social: true
+#    distribution:
+#      percentiles-histogram:
+#        all: false
+#      percentiles:
+#        all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
+#    web:
+#      server:
+#        request:
+#          autotime:
+#            enabled: true
+
+server:
+  port: 9092
