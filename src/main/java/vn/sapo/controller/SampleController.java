@@ -41,7 +41,7 @@ private final MeterRegistry registry;
         Timer.Builder builder = Timer.builder("social.a002")
                 .publishPercentiles(0, 0.5, 0.75, 0.95, 0.99, 1.0)
 //                .publishPercentileHistogram()
-                .serviceLevelObjectives(Duration.ofMillis(100),Duration.ofMillis(500),Duration.ofMillis(700))
+                .serviceLevelObjectives(Duration.ofMillis(100),Duration.ofMillis(500),Duration.ofMillis(700),Duration.ofMillis(1000),Duration.ofMillis(2000),Duration.ofMillis(5000))
                 .minimumExpectedValue(Duration.ofMillis(1))
                 .maximumExpectedValue(Duration.ofMinutes(1))
                 .tag("uri", "call-rest-template");

@@ -41,18 +41,18 @@ management:
         pushgateway:
           enabled: true
     enable:
-      all: false
-      social: true
-#    distribution:
+      all: true
+#      social: true
+    distribution:
+      percentiles:
+        http: 0, 0.5, 0.75, 0.95, 0.99, 1.0
+      slo:
+        http: 100ms,200ms,300ms,400ms,500ms,600ms,700ms,800ms,900ms,1s,1500ms,2s,3s,4s,5s,6s,7s,10s,15s,20s,25s,30s,50s,70s,100s,150s,200s,5m,6m,7m,10m,15m,20m,25m,30m
+#        http: 0.1s,0.2s,0.3s,0.4s,0.5s,0.6s,0.7s,0.8s,0.9s,1s,1.5s,2s,3s,4s,5s,7s,10s,15s,20s,25s,30s,50s,70s,100s,150s,200s,300s,400s,500s,700s,1000s,2000s
+#        http: 100ms,200ms,300ms,400ms,500ms,600ms,700ms,800ms,900ms,1s,2s,5s,10s,30s,1m,2m,3m
 #      percentiles-histogram:
-#        all: false
-#      percentiles:
-#        all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
-#    web:
-#      server:
-#        request:
-#          autotime:
-#            enabled: true
+#        http: true
+#        social: true
 
 server:
   port: 9092

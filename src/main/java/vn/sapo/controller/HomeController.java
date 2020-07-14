@@ -18,7 +18,8 @@ public class HomeController {
 
 
     @GetMapping("/{name}")
-    public String home (@PathVariable("name") String name) {
+    public String home (@PathVariable("name") String name) throws InterruptedException {
+        Thread.sleep(1000);
         getName(name);
         return name;
     }
